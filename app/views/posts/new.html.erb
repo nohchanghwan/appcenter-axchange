@@ -1,0 +1,17 @@
+<h1>게시글작성</h1>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title%><br/>
+    <%= f.text_field :title%>
+  </div>
+
+  <div>
+    <%= f.label :content%><br/>
+    <%= f. text_field :content%>
+  </div>
+
+  <div>
+    <%= f.submit%>
+  </div>
+<%end%>

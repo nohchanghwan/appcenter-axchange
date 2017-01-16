@@ -1,0 +1,17 @@
+<a href="/users/sign_out">로그아웃</a><br/>
+<a href="/home/index">메인가기</a>
+
+<h1>게시글 리스트</h1>
+
+<p><%= current_user. email %></p>
+
+<div>
+  <% @posts.each do |post|%>
+  <li>
+    <%= link_to post.title, post_path(id: post.id)%>
+    <%= post.user.email if post.user %> <!--여기가중요 if post.user-->
+    <%= link_to "수정하기", edit_post_path(post)%>
+    <%= link_to "삭제하기", post_path(post), method: :DELETE%>
+  </li>
+  <%end%>
+</div>
